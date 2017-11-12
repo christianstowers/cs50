@@ -1,13 +1,8 @@
 
         /*
-        the idea is to detect '\0's and print the
-        following index, i.e. letter. This is assuming
-        index following a \0 is a letter.
-
-        @7:19: try two variables: one int for a counter
-        in the while loop, and one string/int in the nested
-        while/for loop for grabbing letters accorsing to
-        the counter.
+        the idea is to detect spaces between words and print
+        the following index, i.e. letter. This is assuming
+        index following a space is a letter.
         */
 
 #include <cs50.h>
@@ -17,24 +12,25 @@
 
 int main(void)
 {
-    printf ("What is your name: ");
+    //get user input
     string name = get_string();
 
-    if (name != NULL)
-    {
-        //char initials[] = ""; //try adding each initial to this array
-        printf ("%c", toupper(name[0]));
-        int len = strlen (name); //saves memory instead of counting every loop
-        int n = 0; //int counter in outer loop
+    //print the first initial
+    printf ("%c", toupper(name[0]));
 
-        while (n < len)
+    //store string length in a variable
+    int len = strlen (name); //saves memory instead of counting every loop
+
+    //loops i times equal to the string length
+    for (int i = 0; i < len; i++)
+    {
+        //finds the first letter of each new word
+        if (name[i] == ' ' && name[i + 1] != '\0')
         {
-            if (name[n] == ' ')
-            {
-                printf ("%c", toupper(name[n + 1]));
-            }
-            n++;
+            //prints the identified letter
+            printf ("%c", toupper(name[i + 1]));
         }
-        printf("\n");
     }
+    //clear the line at after printing all necessary letter
+    printf("\n");
 }
