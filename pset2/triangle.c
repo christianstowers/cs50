@@ -1,4 +1,4 @@
-//creating and calling functions example
+//Version 1: creating and calling functions example
 
 #include <cs50.h>
 #include <stdio.h>
