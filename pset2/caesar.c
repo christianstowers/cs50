@@ -14,6 +14,11 @@ and the logic for keeping things alphabetical.
 
 int main( int argc,string argv[])
 {
+    if (argc != 2)
+    {
+        printf("Less or more than 2 arguments given, exiting...\n");
+        return 1;
+    }
     ////////other dude's code////////
     int k;
 
@@ -33,7 +38,7 @@ int main( int argc,string argv[])
     int ascii[strlen(a)];
     printf("ASCII numbers: ");
 
-    //ASCII numbers
+    //ASCII numbers loop
     for(int i = 0; i < strlen(a); i++)
     {
         ascii[i] = a[i];
@@ -41,7 +46,15 @@ int main( int argc,string argv[])
     }
     printf("\n");
 
+/* *****need to use isupper() or islower()
+        then subtract 65 or 97 respectively (why?)
 
+1. Subtract your ASCII character by 65. It'll lead to output between 0 to 25 (inclusive).
+2. Add the displacement (shift distance).
+3. Take a modulo 26, to wrap around your result.
+4. Add 65 back again.
+
+*/
 
     char n[' '];
 
@@ -49,8 +62,15 @@ int main( int argc,string argv[])
     //Dummy cipher loop
     for(int i = 0; i < strlen(a); i++)
     {
-        n[i] = a[i] + 1;
-        printf("%i ", n[i]);
+        if(a[i] == ' ') //preserves spaces
+        {
+            n[i] = a[i];
+        }
+        else
+        {
+            n[i] = a[i] + 1;
+            printf("%i ", n[i]);
+        }
     }
     printf("\n");
 
@@ -61,3 +81,4 @@ int main( int argc,string argv[])
     }
     printf("\n");
 }
+
