@@ -7,9 +7,27 @@ WORK IN PROGRESS; NOT FINISHED
 #include <stdlib.h> // provides atoi
 #include <string.h>
 #include <ctype.h> // provides toupper
+#include <crypt.h>
 
 #define _XOPEN_SOURCE
 #include <unistd.h>
+
+/*
+READ:
+crypt() function: http://pubs.opengroup.org/onlinepubs/009695399/functions/crypt.html
+    :   http://www.gnu.org/software/libc/manual/html_node/crypt.html
+salt: random data as an additional input to a one-way function that hashes a password or passphrase
+one-way function:
+    :one-to-one:
+    :computational complexity theory:
+    :
+nonce:
+dictionary attacks:
+cryptographic hash function:
+rainbow tables:
+key stretching:
+*/
+
 
 int main (int argc, string argv[])
 {
