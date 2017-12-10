@@ -15,3 +15,4 @@ for i in range(height):
         print ("#")
 
     print ("\n")
+
